@@ -17,7 +17,8 @@ const Repos = ({ nickName }) => {
   // pinta  los repo mediante map
   return (
     <div className='Repos'>
-      {repos.map((item) => (
+      {repos.length > 0 &&
+        repos.map((item) => (
         <Repo key={item.id} item={item} />
       ))}
     </div>
