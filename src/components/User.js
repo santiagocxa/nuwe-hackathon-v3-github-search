@@ -3,7 +3,7 @@ import Profile from './Profile';
 import Search from './Search';
 
 const User = () => {
-  //declara el estasdo
+  //declara el estado del componente
   const [userData, setUserData] = useState({
     name: '',
     displayUser: false,

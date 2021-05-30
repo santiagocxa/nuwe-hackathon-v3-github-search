@@ -23,7 +23,7 @@ const Header = (props) => {
         <div className='Header-user'>
           <img className='Header-img' src={user.img || Logo } alt='avatar' />
           <div>
-            <p className='Item'>{user.name}</p>
+            <p className='Item'>{user.user}</p>
             <p className='Item'onClick={handleSubmit}>Signout</p>
           </div>
         </div>

@@ -1,60 +1,78 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { resgiterRequest } from '../actions'
-import '../assets/styles/Register.css'
-import Logo from '../assets/static/gitDark.png'
+import { connect } from 'react-redux';
+import { resgiterRequest } from '../actions';
+import '../assets/styles/Register.css';
+import Logo from '../assets/static/gitDark.png';
 
-const Register = props => {
-
+const Register = (props) => {
   const [form, setForm] = useState({
-    name:'',
-    email:'',
-    password:''
-  })
+    user: '',
+    pass: '',
+    githubName: '',
+  });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setForm({
       ...form,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    props.resgiterRequest(form)
-    props.history.push('/')
-  }
+    props.resgiterRequest(form);
+    const { user, pass } = form;
+    console.log(user + pass);
+    fetch('http://localhost:8080/users/signup', {
+      method: 'POST',
+      body: form,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw 'Error en la llamada Ajax';
+        }
+      })
+      .then(function (texto) {
+        console.log(texto);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    props.history.push('/');
+  };
 
-  return(
+  return (
     <div className='Register'>
       <div className='Register-container'>
         <div className='Register-img-container'>
-          <img className='Register-img' src={Logo} alt='gitHub'/>
+          <img className='Register-img' src={Logo} alt='gitHub' />
         </div>
         <form className='Register-form' onSubmit={handleSubmit}>
           <input
             className='Register-user btn'
-            name='name'
+            name='githubName'
             type='text'
             placeholder='User Name'
-            value={form.name}
+            value={form.githubName}
             onChange={handleChange}
           />
           <input
             className='Register-email btn'
-            name='email'
+            name='user'
             type='text'
             placeholder='email@email.com'
-            value={form.email}
+            value={form.user}
             onChange={handleChange}
           />
           <input
             className='Register-password btn'
-            name='password'
+            name='pass'
             type='password'
             placeholder='*******'
-            value={form.password}
+            value={form.pass}
             onChange={handleChange}
           />
           <button className='Register-button btn'>Register</button>
@@ -64,12 +82,11 @@ const Register = props => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const mapDispatchToProps = {
   resgiterRequest,
 };
-
 
 export default connect(null, mapDispatchToProps)(Register);

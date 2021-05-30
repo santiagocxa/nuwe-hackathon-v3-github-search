@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import '../assets/styles/Search.css';
 
 const Search = (props) => {
@@ -22,7 +20,7 @@ const Search = (props) => {
         <button className='Form-button'>
           {data.nameButton || 'Search User'}
         </button>
-        <Link to='/' className={data.back +' Form-button Header-back'} >
+        <Link to='/' className={'Form-button'} >
           <p type='button'>Back</p>
         </Link>
       </form>
