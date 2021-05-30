@@ -1,0 +1,15 @@
+.Repo {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.Repo p {
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .Repo {
+    width: 48%;
+  }
+}

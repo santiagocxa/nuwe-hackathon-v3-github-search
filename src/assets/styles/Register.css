@@ -1,0 +1,64 @@
+.Register {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Register-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Register-img-container {
+  width: 90%;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Register-img {
+  width: 50%;
+}
+
+.Register-form {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(246, 248, 250);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+  padding: 20px;
+}
+
+.Register-email {
+
+}
+
+.Register-password {
+}
+
+.Register-button {
+  background-color: rgb(46, 164, 79);
+  color: white;
+  font-weight: bold;
+}
+
+.btn {
+  width: 90%;
+  margin-top: 15px;
+  height: 32px;
+  border: solid 1px rgb(171 213 255);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}

@@ -1,0 +1,13 @@
+.Repos {
+  padding-top: 20px;
+  width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+  .Repos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 865px;
+  }
+}
