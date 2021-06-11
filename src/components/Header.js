@@ -10,7 +10,6 @@ import Logo from '../assets/static/user.png'
 const Header = (props) => {
   const { user } = props;
   const hasUser = Object.keys(user).length > 0;
-
   const handleSubmit = event => {
     event.preventDefault();
     props.logout()

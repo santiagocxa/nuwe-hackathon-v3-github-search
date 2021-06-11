@@ -12,38 +12,24 @@ const Register = (props) => {
     githubName: '',
   });
 
+  const [log, setLog] = useState(false)
+
   const handleChange = (event) => {
     setForm({
       ...form,
       [event.target.name]: event.target.value,
     });
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     props.resgiterRequest(form);
-    const { user, pass } = form;
-    console.log(user + pass);
-    fetch('http://localhost:8080/users/signup', {
-      method: 'POST',
-      body: form,
-    })
-      .then(function (response) {
-        if (response.ok) {
-          return response.text();
-        } else {
-          throw 'Error en la llamada Ajax';
-        }
-      })
-      .then(function (texto) {
-        console.log(texto);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-    props.history.push('/');
+    setLog(true)
+    setTimeout(()=>{
+      props.history.push('/');
+    }, 1000)
   };
-
+  
   return (
     <div className='Register'>
       <div className='Register-container'>
@@ -80,6 +66,8 @@ const Register = (props) => {
             <p type='button'>Back</p>
           </Link>
         </form>
+      {log === true && 
+      <div>Login OK</div>}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-export const resgiterRequest = payload => ({
+export const resgiterRequest = (payload) => ({
   type: 'REGISTER_REQUEST',
   payload,
 });

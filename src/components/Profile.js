@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Repos from './Repos';
-import getUser from '../assets/utils/getUser';
+import {getData} from '../assets/utils/getData';
 
 import '../assets/styles/Profile.css';
 
@@ -12,7 +12,7 @@ const Profile = ({ nickName }) => {
   const API = 'https://api.github.com/users/' + nickName;
   //se hace un llamado a la API y luego carga los datos al estado
   useEffect(() => {
-    getUser(API)
+    getData(API)
       .then((resp) => setUser(resp))
       .catch(setUser([]));
   }, [API]);

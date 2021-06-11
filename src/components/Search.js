@@ -18,9 +18,9 @@ const Search = (props) => {
           value={data.name}
         />
         <button className='Form-button'>
-          {data.nameButton || 'Search User'}
+          'Search User
         </button>
-        <Link to='/' className={'Form-button'} >
+        <Link to='/' className='Form-button'>
           <p type='button'>Back</p>
         </Link>
       </form>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Profile from './Profile';
 import Search from './Search';
 
-const User = () => {
+const User = (props) => {
   //declara el estado del componente
   const [userData, setUserData] = useState({
     name: '',
